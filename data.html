@@ -9,9 +9,14 @@
   <link rel="stylesheet"  href="jquery.dataTables.min.css">
   <script type="text/javascript">
     $(document).ready(function() {
-      $('#example').DataTable({
+    var table =  $('#example').DataTable({
         "ajax": 'oshoworld.json'
       });
+      table.on( 'xhr', function () {
+          var json = table.ajax.json();
+          alert( json.data.length +' row(s) were loaded' );
+      } );
+
     });
   </script>
 </head>
