@@ -25,7 +25,19 @@
 
             return data;
          }
- },
+ },{
+   "data": "download",
+   "render": function(data, type, row, meta){
+ if(type === 'display'){
+     data = '<audio controls><source src="'+ data +'" type="audio/mpeg">Your browser does not support the audio element.</audio>';
+
+
+ }
+
+ return data;
+ }
+
+ }
         ]
       });
     });
@@ -38,7 +50,7 @@
             <tr>
                 <th>name</th>
                 <th>download</th>
-
+<th>play</th>
 
             </tr>
         </thead>
@@ -46,7 +58,7 @@
             <tr>
                 <th>name</th>
                 <th>download</th>
-
+<th>play</th>
 
             </tr>
         </tfoot>
