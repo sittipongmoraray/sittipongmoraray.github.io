@@ -16,7 +16,16 @@
         },
         columns: [
             { "data": "name" },
-            { "data": "download" },
+            {
+              "data": "download",
+              "render": function(data, type, row, meta){
+            if(type === 'display'){
+                data = '<a href="' + data + '">' + data + '</a>';
+            }
+
+            return data;
+         }
+ },
         ]
       });
     });
